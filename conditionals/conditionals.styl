@@ -1,0 +1,15 @@
+style-paragraph(give-extra-space) {
+    margin: 20px 0;
+
+    if (give-extra-space) {
+        margin-top: 40px;
+    }
+}
+
+p.prose {
+    style-paragraph(false);
+}
+
+p.footer {
+    style-paragraph(true);
+}

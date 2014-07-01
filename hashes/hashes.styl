@@ -1,0 +1,13 @@
+prefixes = {
+    firefox: '-moz',
+    webkit: '-webkit',
+    opera: '-o',
+    ie: '-ms'
+}
+
+p {
+    paragraph-box-shadow = 3px 3px 5px 6px;
+
+    {prefixes['ie']}-box-shadow: paragraph-box-shadow;
+    box-shadow: paragraph-box-shadow;
+}

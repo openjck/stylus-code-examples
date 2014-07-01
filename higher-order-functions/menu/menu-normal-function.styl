@@ -1,0 +1,24 @@
+color-menu(transform-color) {
+    nav {
+        background-color: transform-color(#dbffdb);
+    }
+
+    #help {
+        background-color: transform-color(#ff6a6a);
+
+        a {
+            color: transform-color(#000);
+        }
+    }
+
+    a {
+        color: transform-color(#006400)
+    }
+}
+
+/* Stylus apparently has lambdas, but they don't appear to work. */
+use-same-color(hex) {
+    return hex;
+}
+
+color-menu(use-same-color);

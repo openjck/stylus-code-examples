@@ -1,0 +1,20 @@
+filter(function, list) {
+    filtered-list = ();
+
+    for element in list {
+        if (function(element)) {
+            push(filtered-list, element);
+        }
+    }
+
+    return filtered-list;
+}
+
+greaterThanTwo(num) {
+    return num > 2;
+}
+
+/* Can't just print to stdout. We need at least one rule. */
+#out {
+    numbers-greater-than-two: filter(greaterThanTwo, (1 2 3 4 5))
+}

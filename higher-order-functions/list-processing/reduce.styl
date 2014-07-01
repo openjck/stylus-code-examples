@@ -1,0 +1,18 @@
+reduce(function, list, initial) {
+    value = initial;
+
+    for element in list {
+        value = function(value, element);
+    }
+
+    return value;
+}
+
+add(first, second) {
+    return first + second;
+}
+
+/* Can't just print to stdout. We need at least one rule. */
+#out {
+    reduced-numbers: reduce(add, (1 2 3 4 5), 0)
+}

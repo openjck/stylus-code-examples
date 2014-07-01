@@ -1,0 +1,18 @@
+map(function, list) {
+    mapped-list = ();
+
+    for element in list {
+        push(mapped-list, function(element));
+    }
+
+    return mapped-list;
+}
+
+double(num) {
+    return num * 2;
+}
+
+/* Can't just print to stdout. We need at least one rule. */
+#out {
+    doubled-numbers: map(double, (1 2 3 4 5))
+}

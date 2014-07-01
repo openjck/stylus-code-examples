@@ -1,0 +1,14 @@
+build-font-face(family, filebase) {
+    @font-face {
+        font-family: family;
+        src: url(fonts/filebase.eot);
+        src: url(fonts/filebase.eot?#iefix) format('embedded-opentype'),
+             url(fonts/filebase.woff) format('woff'),
+             url(fonts/filebase.ttf) format('truetype'),
+             url(fonts/filebase.svg#svg-id) format('svg');
+    }
+}
+
+/* These two approaches are equivalent */
+build-font-face('OpenSans-Light-webfont', 'OpenSansLight');
+build-font-face(filebase: 'OpenSansLight', family: 'OpenSans-Light-webfont');

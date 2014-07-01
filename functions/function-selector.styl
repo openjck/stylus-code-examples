@@ -1,0 +1,14 @@
+remove-unnecessary-margins() {
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+p {
+    margin-bottom: 20px;
+    remove-unnecessary-margins();
+}
