@@ -1,0 +1,46 @@
+filter(function, list) {
+    filtered-list = ();
+
+    for element in list {
+        if (function(element)) {
+            push(filtered-list, element);
+        }
+    }
+
+    return filtered-list;
+}
+
+quicksort(list) {
+    if (length(list) == 0) {
+        return ();
+    }
+
+    pivot = list[0];
+    sorted = ();
+
+    /* Build a list that contains everything except for the pivot */
+    remaining = ();
+    i = 0;
+    for element in list {
+        if (i != 0) {
+            push(remaining, element);
+        }
+        i = i + 1;
+    }
+
+    smaller-sorted = quicksort(filter(@(num) {
+        return num <= pivot;
+    }, remaining));
+
+    bigger-sorted = quicksort(filter(@(num) {
+        return num > pivot;
+    }, remaining));
+
+    push(sorted, smaller-sorted, pivot, bigger-sorted);
+
+    return sorted;
+}
+
+#out {
+    sorted-numbers: quicksort((5 93 6 13 72 45 7 82 9 63 2));
+}
